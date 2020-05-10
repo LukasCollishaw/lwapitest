@@ -3,33 +3,33 @@ kind:  Mapping
 metadata:
   name:  generation
 spec:
-  prefix: /generation
+  prefix: /api/ticket/generate
   service: ticket-generation-service-app
-  rewrite: /api/ticket/generate
+  rewrite: ""
 ---
 apiVersion: getambassador.io/v2
 kind:  Mapping
 metadata:
   name:  admin
 spec:
-  prefix: /admin
+  prefix: /api/ticket/count
   service: ticket-admin-service-app
-  rewrite: /api/ticket/count
+  rewrite: ""
 ---
 apiVersion: getambassador.io/v2
 kind:  Mapping
 metadata:
   name:  validation
 spec:
-  prefix: /validation
+  prefix: /api/ticket/validate
   service: ticket-validation-service-app
-  rewrite: /api/ticket/validate/gre
+  rewrite: ""
 ---
 apiVersion: getambassador.io/v2
 kind:  Mapping
 metadata:
   name:  invalidation
 spec:
-  prefix: /invalidate
+  prefix: /api/ticket/invalidate
   service: ticket-admin-service-app
-  rewrite: /api/ticket/invalidate/4f091688-67e6-446b-bf57-cc1c22b6231b
+  rewrite: ""
