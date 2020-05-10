@@ -27,7 +27,7 @@ I wrote this solution as 3 individual microservices to be orchestrated with Kube
 
 Ultimately, the biggest bottleneck as far as I can see is the ticket generation/validation services and the write heavy database. To alleviate these, both the generation and validation services sit behind a load balancer and have Horizontal Pod Autoscaling, which will spin up or kill pods depending on CPU usage. Azure is also configured to autoscale the number of nodes depending on load.
 
-From a database perspective, I've decided to go with Couchbase (which I have never used before, but looked fitting for the role). It is a distributed database that remedies the heavy I/O by spreading it across N servers. Adding or removing nodes in this cluster is relatively easy and inexpensive, so if demands require it, it can be scaled up and shouldn't face any issues.
+From a database perspective, I've decided to go with Couchbase. It is a distributed database that remedies the heavy I/O by spreading it across N servers. Adding or removing nodes in this cluster is relatively easy and inexpensive, so if demands require it, it can be scaled up and shouldn't face any issues.
 
 I played around with some ideas of caching, but ultimately it seemed pretty superfluous since the context of what is being done wouldn't particularly benefit from it or would be very minimal. I.E. If many users share a ticket (for whatever reason), we could use a LFU cache to store the top 20?% most commonly validated ticket ids and values, to reduce load on the database.
 
