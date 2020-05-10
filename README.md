@@ -32,6 +32,8 @@ From a database perspective, I've decided to go with Couchbase. It is a distribu
 I played around with some ideas of caching, but ultimately it seemed pretty superfluous since the context of what is being done wouldn't particularly benefit from it or would be very minimal. I.E. If many users share a ticket (for whatever reason), we could use a LFU cache to store the top 20?% most commonly validated ticket ids and values, to reduce load on the database.
 
 The code used to gather the number of tickets issued is incredibly barebones, and not performant at all. This could be fixed, but due to my understanding of the context and usage, this shouldn't be an issue.
+
+The choice to use GUIDs as a ticket id was because of the ease of generation for them. Using other methods, notably, incremental, would make the task a lot more difficult as we would into problems with data consistency amongst the distributed databases.
 ## API Documentation and Demo
 This API is hosted on a Azure Kubernetes Service, which can be accessed at 'https://20.50.147.218'.
 
