@@ -3,7 +3,7 @@
 ## Preface
 This test was written with the intention of design and scalability being primary concern, and because of this, the code isn't written to a standard I'd generally allow in production, i.e. database I/O in controller code, no unit tests, etc. 
 
-The services also have not had any security considerations, most notably, rate limiting. This is something that would definitley need to be implemented if this were to be moved to production.
+The services also have not had any security considerations, most notably, rate limiting. This is something that would definitely need to be implemented if this were to be moved to production.
 
 The spec mentions that authentication is required for the internal parts of the application, although not required to implement. Given a middleware authentication service, Ambassador can easily be configured to check against this before routing traffic to the internal services.
 
