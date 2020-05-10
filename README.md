@@ -23,7 +23,7 @@ The spec calls for an api that is tolerant to huge amounts of traffic; working u
 ## Design Diagram / Scaling Considerations
 ![](https://github.com/LukasCollishaw/lwapitest/blob/master/design.PNG)
 
-I wrote this solution as 3 individual microservices to be orchestrated with Kubernetes; this allows us to individually scale up/down each service depending on their needs.
+I wrote this solution as 3 individual microservices running in Linux Docker containers to be orchestrated with Kubernetes; this allows us to individually scale up/down each service depending on their needs.
 
 Ultimately, the biggest bottleneck as far as I can see is the ticket generation/validation services and the write heavy database. To alleviate these, both the generation and validation services sit behind a load balancer and have Horizontal Pod Autoscaling, which will spin up or kill pods depending on CPU usage. Azure is also configured to autoscale the number of nodes depending on load.
 
