@@ -39,7 +39,7 @@ This API is hosted on a Azure Kubernetes Service, which can be accessed at 'http
 
 **PUT https://20.50.147.218/api/ticket/generate**
 
-Response in format:
+Response in JSON format:
 
 ```
 {
@@ -49,7 +49,7 @@ Response in format:
 ***
 **GET https://20.50.147.218/api/ticket/validate/{id}**
 
-Response in format:
+Response in JSON format:
 
 404 if ticket not found, otherwise
 ```
@@ -65,7 +65,7 @@ Returns 200 OK on success.
 ***
 **GET https://20.50.147.218/api/ticket/count**
 
-Response in format: 
+Response in JSON format: 
 ```
 {
   count: 0
