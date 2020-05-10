@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cb-lwapi-auth
+type: Opaque
+data:
+  username: QWRtaW5pc3RyYXRvcg==  
+  password: cGFzc3dvcmQ=          
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: tickets 
+spec:
+  memoryQuota: 128Mi
+---
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cb-lwapi
+spec:
+  image: couchbase/server:6.5.0  
+  security:
+    adminSecret: cb-lwapi-auth
+  networking:
+    exposeAdminConsole: true
+    adminConsoleServices:
+    - data
+  buckets:
+    managed: true
+  servers:
+  - size: 1
+    name: all_services
+    services:
+    - data
+    - index
+    - query
+    - search
+    - eventing
+    - analytics

@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  ticketgenerationservice:
+    image: ${DOCKER_REGISTRY-}ticketgenerationservice
+    build:
+      context: .
+      dockerfile: TicketGenerationService/Dockerfile
+  ticketadminservice:
+    image: ${DOCKER_REGISTRY-}ticketadminservice
+    build:
+      context: .
+      dockerfile: TicketAdminService/Dockerfile
+  ticketvalidationservice:
+    image: ${DOCKER_REGISTRY-}ticketvalidationservice
+    build:
+      context: .
+      dockerfile: TicketValidationService/Dockerfile

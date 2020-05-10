@@ -1,0 +1,60 @@
+apiVersion: apps/v1beta1 
+kind: Deployment
+metadata:
+  name: ticket-generation-service-app
+spec:
+  selector:
+    matchLabels:
+      app: ticket-generation-service-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ticket-generation-service-app
+    spec:
+      containers:
+      - name: ticket-generation-service-app
+        image: kasthelord/ticketgenerationservice:0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: server
+        env:
+        - name: Couchbase__Username
+          valueFrom:
+            secretKeyRef:
+              name: cb-lwapi-auth
+              key: username
+        - name: Couchbase__Password
+          valueFrom:
+            secretKeyRef:
+              name: cb-lwapi-auth
+              key: password
+        - name: Couchbase__ConnectionString
+          value: couchbase://cb-lwapi-srv
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ticket-generation-service-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ticket-generation-service-app
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50

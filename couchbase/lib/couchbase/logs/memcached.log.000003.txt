@@ -1,0 +1,29 @@
+2020-05-07T12:09:37.240915+00:00 INFO ---------- Opening logfile: /opt/couchbase/var/lib/couchbase/logs/memcached.log.000003.txt
+2020-05-07T12:09:37.309644+00:00 INFO Couchbase version 6.0.3-2895 starting.
+2020-05-07T12:09:37.310007+00:00 INFO Using SLA configuration: {"version":1,"comment":"Current MCBP SLA configuration","default":{"slow":"500 ms"},"DELETE_BUCKET":{"slow":"10 s"},"COMPACT_DB":{"slow":"1800 s"},"SEQNO_PERSISTENCE":{"slow":"30 s"}}
+2020-05-07T12:09:37.310010+00:00 INFO Enable standard input listener
+2020-05-07T12:09:37.310079+00:00 INFO NUMA: NOT setting memory allocation policy to 'interleave' - request failed: Operation not permitted
+2020-05-07T12:09:37.310097+00:00 INFO Loading RBAC configuration from [/opt/couchbase/var/lib/couchbase/config/memcached.rbac]
+2020-05-07T12:09:37.311497+00:00 INFO Loading error maps from [/opt/couchbase/etc/couchbase/kv/error_maps]
+2020-05-07T12:09:37.321086+00:00 INFO Audit descriptor 20480 changed from: disabled to: enabled
+2020-05-07T12:09:37.321089+00:00 INFO Audit descriptor 20481 changed from: disabled to: enabled
+2020-05-07T12:09:37.321090+00:00 INFO Audit descriptor 20482 changed from: disabled to: enabled
+2020-05-07T12:09:37.321091+00:00 INFO Audit descriptor 20483 changed from: disabled to: enabled
+2020-05-07T12:09:37.321091+00:00 INFO Audit descriptor 20484 changed from: disabled to: enabled
+2020-05-07T12:09:37.321091+00:00 INFO Audit descriptor 20486 changed from: disabled to: enabled
+2020-05-07T12:09:37.321092+00:00 INFO Audit descriptor 20487 changed from: disabled to: enabled
+2020-05-07T12:09:37.321093+00:00 INFO Audit descriptor 20492 changed from: disabled to: enabled
+2020-05-07T12:09:37.377987+00:00 INFO Create bucket "<internal>" by using "nobucket.so"
+2020-05-07T12:09:37.379876+00:00 INFO Enable management port(s)
+2020-05-07T12:09:37.379878+00:00 INFO Enable user port(s)
+2020-05-07T12:09:37.380255+00:00 INFO 10 Listen on 0.0.0.0:11210
+2020-05-07T12:09:37.380286+00:00 INFO 11 Listen on [::]:11210
+2020-05-07T12:09:37.380332+00:00 INFO 12 Listen on 0.0.0.0:11209
+2020-05-07T12:09:37.380348+00:00 INFO 13 Listen on [::]:11209
+2020-05-07T12:09:37.380373+00:00 INFO 14 Listen on 0.0.0.0:11207
+2020-05-07T12:09:37.380387+00:00 INFO 15 Listen on [::]:11207
+2020-05-07T12:09:37.381454+00:00 INFO Initialization complete. Accepting clients.
+2020-05-07T12:09:37.422872+00:00 INFO 42: Client 127.0.0.1:57075 authenticated as <ud>@ns_server</ud>
+2020-05-07T12:09:37.423111+00:00 INFO 42: Loading RBAC configuration from [/opt/couchbase/var/lib/couchbase/config/memcached.rbac] [ 127.0.0.1:57075 - 127.0.0.1:11209 (<ud>@ns_server</ud>) ]
+2020-05-07T12:09:37.424116+00:00 INFO 42: RBAC configuration updated [ 127.0.0.1:57075 - 127.0.0.1:11209 (<ud>@ns_server</ud>) ]
+2020-05-07T12:09:37.691597+00:00 INFO 42: Client 127.0.0.1:38287 authenticated as <ud>@ns_server</ud>

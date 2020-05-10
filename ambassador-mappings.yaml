@@ -1,0 +1,35 @@
+apiVersion: getambassador.io/v2
+kind:  Mapping
+metadata:
+  name:  generation
+spec:
+  prefix: /generation
+  service: ticket-generation-service-app
+  rewrite: /api/ticket/generate
+---
+apiVersion: getambassador.io/v2
+kind:  Mapping
+metadata:
+  name:  admin
+spec:
+  prefix: /admin
+  service: ticket-admin-service-app
+  rewrite: /api/ticket/count
+---
+apiVersion: getambassador.io/v2
+kind:  Mapping
+metadata:
+  name:  validation
+spec:
+  prefix: /validation
+  service: ticket-validation-service-app
+  rewrite: /api/ticket/validate/gre
+---
+apiVersion: getambassador.io/v2
+kind:  Mapping
+metadata:
+  name:  invalidation
+spec:
+  prefix: /invalidate
+  service: ticket-admin-service-app
+  rewrite: /api/ticket/invalidate/4f091688-67e6-446b-bf57-cc1c22b6231b
