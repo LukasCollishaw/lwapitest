@@ -25,7 +25,7 @@ The spec calls for an api that is tolerant to huge amounts of traffic; working u
 
 I wrote this solution as 3 individual microservices to be orchestrated with Kubernetes; this allows us to individually scale up/down each service depending on their needs.
 
-Ultimately, the biggest bottleneck as far as I can see is the ticket generation/validation services and the write heavy database. To alleviate these, both the generation and validation services sit behind a load balancer and have Horizontal Pod Autoscaling, which will spin up or kill pods depending on CPU usage. Azure is also configured to autoscale the number nodes depending on load.
+Ultimately, the biggest bottleneck as far as I can see is the ticket generation/validation services and the write heavy database. To alleviate these, both the generation and validation services sit behind a load balancer and have Horizontal Pod Autoscaling, which will spin up or kill pods depending on CPU usage. Azure is also configured to autoscale the number of nodes depending on load.
 
 From a database perspective, I've decided to go with Couchbase (which I have never used before, but looked fitting for the role). It is a distributed database that remedies the heavy I/O by spreading it across N servers. Adding or removing nodes in this cluster is relatively easy and inexpensive, so if demands require it, it can be scaled up and shouldn't face any issues.
 
