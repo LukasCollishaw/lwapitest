@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ticket-generation-service-app
-        image: kasthelord/ticketgenerationservice:0.1
+        image: lukascollishaw/ticketgenerationservice:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 80

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ticket-admin-service-app
-        image: kasthelord/ticketadminservice:0.1 
+        image: lukascollishaw/ticketadminservice:1.0 
         imagePullPolicy: Always
         ports:
         - containerPort: 80

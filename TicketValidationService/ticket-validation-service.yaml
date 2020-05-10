@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ticket-validation-service-app
-        image: kasthelord/ticketvalidationservice:0.4
+        image: lukascollishaw/ticketvalidationservice:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 80
