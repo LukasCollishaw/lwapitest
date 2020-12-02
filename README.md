@@ -35,11 +35,11 @@ The code used to gather the number of tickets issued is incredibly barebones, an
 
 The choice to use GUIDs as a ticket id was because of the ease of generation for them. Using other methods, notably, incremental, would make the task a lot more difficult as we would into problems with data consistency amongst the distributed databases.
 ## API Documentation and Demo
-This API is hosted on a Azure Kubernetes Service, which can be accessed at 'https://20.50.147.218'.
+This API is hosted on a Azure Kubernetes Service.
 
 ***
 
-**PUT https://20.50.147.218/api/ticket/generate**
+**PUT /api/ticket/generate**
 
 Response in JSON format:
 
@@ -49,7 +49,7 @@ Response in JSON format:
 }
 ```
 ***
-**GET https://20.50.147.218/api/ticket/validate/{id}**
+**GET /api/ticket/validate/{id}**
 
 Response in JSON format:
 
@@ -60,12 +60,12 @@ Response in JSON format:
 }
 ```
 ***
-**POST https://20.50.147.218/api/ticket/invalidate/{id}**
+**POST /api/ticket/invalidate/{id}**
 
 Returns 200 OK on success.
 
 ***
-**GET https://20.50.147.218/api/ticket/count**
+**GET /api/ticket/count**
 
 Response in JSON format: 
 ```
